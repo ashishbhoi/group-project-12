@@ -12,10 +12,10 @@ semester_select = [
 
 
 class Instructor(models.Model):
-    i_id = models.CharField(max_length=8, primary_key=True)
-    login_password = models.CharField(max_length=50)
-    name = models.CharField(max_length=20)
-    email = models.EmailField(max_length=20)
+    i_id = models.CharField(max_length=15, primary_key=True)
+    login_password = models.CharField(max_length=1000)
+    name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=50)
     dept_name = models.ForeignKey(Department, models.SET_NULL, null=True, db_column='dept_name')
 
     def __str__(self):
@@ -34,11 +34,11 @@ class Teaches(models.Model):
 
 
 class Project(models.Model):
-    project_id = models.CharField(max_length=8, primary_key=True)
+    project_id = models.CharField(max_length=20, primary_key=True)
     i_id = models.ForeignKey(Instructor, models.SET_NULL, null=True, db_column='i_id')
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
-    semester = models.CharField(max_length=8, choices=semester_select)
+    semester = models.CharField(max_length=10, choices=semester_select)
     year = models.DecimalField(max_digits=4, decimal_places=0)
 
     def __str__(self):

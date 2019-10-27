@@ -10,7 +10,7 @@ semester_select = [
 
 
 class Classroom(models.Model):
-    building = models.CharField(max_length=8)
+    building = models.CharField(max_length=15)
     room_no = models.CharField(max_length=8)
     capacity = models.DecimalField(max_digits=4, decimal_places=0, null=True, blank=True)
 
@@ -19,8 +19,8 @@ class Classroom(models.Model):
     
 class Section(models.Model):
     course_id = models.ForeignKey(Course, models.CASCADE, db_column='course_id')
-    sec_id = models.CharField(max_length=8)
-    semester = models.CharField(max_length=4, choices=semester_select)
+    sec_id = models.CharField(max_length=10)
+    semester = models.CharField(max_length=8, choices=semester_select)
     year = models.DecimalField(max_digits=4, decimal_places=0)
     building = models.ForeignKey(Classroom, models.SET_NULL, db_column='building', null=True, related_name='classroom1')
     room_no = models.ForeignKey(Classroom, models.SET_NULL, db_column='room_no', null=True, related_name='classroom2')

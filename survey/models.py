@@ -3,8 +3,8 @@ from student.models import Student
 from course.models import Course
 
 class Specialization(models.Model):
-    spec_id = models.CharField(max_length=8, primary_key=True)
-    title = models.CharField(max_length=15)
+    spec_id = models.CharField(max_length=15, primary_key=True)
+    title = models.CharField(max_length=30)
 
     def __str__(self):
         return "%s (%s)" % (self.spec_id, self.title)

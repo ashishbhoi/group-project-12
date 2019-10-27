@@ -114,3 +114,6 @@ media/
 
 #extra Files
 /static/
+
+#node modules
+**/static/node_modules/

@@ -24,13 +24,10 @@ class Instructor(models.Model):
 
 class Teaches(models.Model):
     i_id = models.ForeignKey(Instructor, models.CASCADE, db_column='i_id')
-    course_id = models.ForeignKey(Section, models.CASCADE, related_name='section5', db_column='course_id')
-    sec_id = models.ForeignKey(Section, models.SET_NULL, null=True, related_name='section6', db_column='sec_id')
-    semester = models.ForeignKey(Section, models.SET_NULL, null=True, related_name='section7', db_column='semester')
-    year = models.ForeignKey(Section, models.SET_NULL, null=True, related_name='section8', db_column='year')
+    section = models.ForeignKey(Section, models.SET_NULL, null=True)
 
     class Meta:
-        unique_together = (('i_id', 'course_id', 'sec_id', 'semester', 'year'),)
+        unique_together = (('i_id', 'section'),)
 
 
 class Project(models.Model):
@@ -43,4 +40,3 @@ class Project(models.Model):
 
     def __str__(self):
         return "%s (%s)" % (self.project_id, self.title)
-    

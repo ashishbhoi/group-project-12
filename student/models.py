@@ -19,16 +19,12 @@ class Student(models.Model):
 
 class Takes(models.Model):
     roll_number = models.ForeignKey(Student, models.CASCADE, db_column='roll_number')
-    course_id = models.ForeignKey(Section, models.CASCADE, related_name='section1', db_column='course_id')
-    sec_id = models.ForeignKey(Section, models.SET_NULL, null=True, related_name='section2', db_column='sec_id')
-    semester = models.ForeignKey(Section, models.SET_NULL, null=True, related_name='section3', db_column='semester')
-    year = models.ForeignKey(Section, models.SET_NULL, null=True, related_name='section4', db_column='year')
+    section = models.ForeignKey(Section, models.SET_NULL, null=True)
     feedback = models.TextField(max_length=500, null=True, blank=True)
     grade = models.CharField(max_length=2, null=True, blank=True)
 
-
     class Meta:
-        unique_together = (('roll_number', 'course_id', 'sec_id', 'semester', 'year'),)
+        unique_together = (('roll_number', 'section'),)
 
 
 class TakesProject(models.Model):

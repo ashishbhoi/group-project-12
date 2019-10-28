@@ -117,3 +117,6 @@ media/
 
 #node modules
 **/static/node_modules/
+
+#database file
+/groupproject/database.py

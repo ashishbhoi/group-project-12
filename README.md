@@ -21,6 +21,11 @@ Django Group Project For Data Base and Information System Lab
 ### Migrate Relations To Database ###
     python manage.py migrate
 
+### Download node modules
+    cd college/static
+    npm install
+    cd ../.. # to go to home directory
+
 ### Collect Static ###
     python manage.py collectstatic
 

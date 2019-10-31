@@ -81,12 +81,8 @@ WSGI_APPLICATION = 'groupproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': db.ENGINE,
-        'NAME': db.NAME,
-        'USER': db.USER,
-        'PASSWORD': db.PASSWORD,
-        'HOST': db.HOST,
-        'PORT': db.PORT,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database.sqlite3',
     }
 }
 

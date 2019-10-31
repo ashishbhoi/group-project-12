@@ -22,7 +22,7 @@ Django Group Project For Data Base and Information System Lab
     python manage.py migrate
 
 ### Collect Static ###
-    python manage.py collectstatics
+    python manage.py collectstatic
 
 ### Run Live Server Locally ###
     python manage.py runserver
